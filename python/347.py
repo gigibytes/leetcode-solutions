@@ -11,7 +11,7 @@ class Solution:
                 nums_freq[n] = nums.count(n)
             
             #get most frequents
-            most_freq = max(nums_freq.items())[0]
+            most_freq = max(nums_freq, key=lambda k: nums_freq.get(k))
             result.append(most_freq)
             del nums_freq[most_freq]
 
