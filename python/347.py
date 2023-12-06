@@ -6,7 +6,7 @@ class Solution:
         result = []
         nums_set = set(nums)
 
-        while len(most_freq) < k:
+        while len(result) < k:
             for n in nums_set:
                 nums_freq[n] = nums.count(n)
             
