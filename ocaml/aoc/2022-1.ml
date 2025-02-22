@@ -14,5 +14,10 @@ let rec split_calories cal_list acc_sub acc =
   | hd :: tl -> split_calories tl [] (acc_sub :: acc)
   | [] -> acc
 in
-split_calories cals_list [] []
-...
+let nested_cals_list = split_calories cals_list [] [] 
+in
+nested_cals_list 
+|> List.map (fun l -> function
+| [] -> 0
+| lst -> List.map Int.of_string l |> List.sum)
+(* need to find or write actual functions *)
